@@ -1,0 +1,17 @@
+FILE = Cantuspruegel_T
+
+all:
+	latex $(FILE).tex
+	makeindex $(FILE).tex
+	latex $(FILE).tex
+	latex $(FILE).tex
+	dvips $(FILE).dvi -o $(FILE).ps -Ppdf
+	ps2pdf $(FILE).ps
+
+clean:
+	rm -rf *.dvi *.ps
+	rm -rf *~ *.bak
+	rm -rf *.log *.aux *.toc
+	rm -rf *.ilg *.idx *.ind
+	rm -rf *.lot *.lof
+	rm -rf *.nav *.out *.snm
