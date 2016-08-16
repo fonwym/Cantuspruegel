@@ -1,5 +1,8 @@
 FILE = Cantuspruegel_T
 
+Cantuspruegel_T.lytex : Cantuspruegel_M.tex
+	#Datei kopieren und umbenennen, _T durch _M und .lytex durch .tex ersetzen
+
 all:
 	latex $(FILE).tex
 	makeindex $(FILE).tex
